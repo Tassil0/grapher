@@ -1,9 +1,9 @@
 /*****************************************************************//**
- * \file   common.h
- * \brief  common includes
+ * @file   common.h
+ * @brief  common includes
  *
- * \author SIK0207
- * \date   May 2023
+ * @author SIK0207
+ * @date   May 2023
  *********************************************************************/
 
 #pragma once

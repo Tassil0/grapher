@@ -1,14 +1,18 @@
 /*****************************************************************//**
- * \file   Graph.cpp
- * \brief  TODO: BRIEF
+ * @file   Graph.cpp
+ * @brief  Graph datastructure class
  *
- * \author SIK0207
- * \date   13.05.2023
+ * @author SIK0207
+ * @date   13.05.2023
  *********************************************************************/
 
 #include <fstream>
 #include "headers/Graph.h"
 
+/**
+ * @brief Contruct graph from file
+ * @param fileName
+ */
 Graph::Graph(std::string &fileName) {
     this->Name = fileName;
     std::ifstream file(fileName);
@@ -25,6 +29,11 @@ Graph::Graph(std::string &fileName) {
     file.close();
 }
 
+/**
+ * @brief make new object from graph
+ * @param rhs
+ * @return graph structure
+ */
 Graph &Graph::operator=(const Graph &rhs) {
     for (auto node : rhs.Nodes) {
         for (auto neighborNode : node->Neighbors) {
@@ -34,10 +43,20 @@ Graph &Graph::operator=(const Graph &rhs) {
     return *this;
 }
 
+/**
+ * @brief does the graph contain key?
+ * @param key searched key
+ * @return bool
+ */
 bool Graph::HasKey(int key) {
     return std::any_of(this->Nodes.begin(), this->Nodes.end(), [key](auto node) { return node->Key == key;});
 }
 
+/**
+ * @brief adds edge to graph
+ * @param nodeKey
+ * @param neighborKey
+ */
 void Graph::AddEdge(int nodeKey, int neighborKey) {
     auto node = this->GetNode(nodeKey);
     auto neighbor = this->GetNode(neighborKey);
@@ -53,6 +72,11 @@ void Graph::AddEdge(int nodeKey, int neighborKey) {
     neighbor->Neighbors.push_back(node);
 }
 
+/**
+ * @brief queries node from graph by key
+ * @param key
+ * @return node
+ */
 Node *Graph::GetNode(int key) {
     for (auto node : this->Nodes) {
         if (node->Key == key)
@@ -61,6 +85,9 @@ Node *Graph::GetNode(int key) {
     return nullptr;
 }
 
+/**
+ * @brief prints the visual representation of graph
+ */
 void Graph::Print() {
     for (auto node : this->Nodes) {
         std::cout << "[ " << node->Key << " ]";

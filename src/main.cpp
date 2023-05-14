@@ -1,9 +1,9 @@
 /*****************************************************************//**
- * \file   main.cpp
- * \brief  Main file for testing and demostration purposes
+ * @file   main.cpp
+ * @brief  Main file for testing and demostration purposes
  *
- * \author SIK0207
- * \date   May 2023
+ * @author SIK0207
+ * @date   May 2023
  *********************************************************************/
 
 #include <array>
@@ -23,8 +23,8 @@ using std::endl;
 void printSep();
 void loadIterate(std::string filename);
 
-std::array<std::string, 4> testFiles = {"graf-big.txt", "graph1.txt", "graph2.txt", "graph3.txt"};
-//std::array<std::string, 3> testFiles = {"graph1.txt", "graph2.txt", "graph3.txt"};
+//std::array<std::string, 4> testFiles = {"graf-big.txt", "graph1.txt", "graph2.txt", "graph3.txt"};
+std::array<std::string, 3> testFiles = {"graph1.txt", "graph2.txt", "graph3.txt"};
 
 int main(int argc, char **argv) {
     switch (argc) {

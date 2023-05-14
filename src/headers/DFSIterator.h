@@ -1,9 +1,9 @@
 /*****************************************************************//**
- * \file   DFSIterator.h
- * \brief  TODO: BRIEF
+ * @file   DFSIterator.h
+ * @brief  Class for the BFS Iterator
  *
- * \author SIK0207
- * \date   13.05.2023
+ * @author SIK0207
+ * @date   13.05.2023
  *********************************************************************/
 
 #pragma once
